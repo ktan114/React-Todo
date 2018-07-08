@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { TodoForm } from './TodoComponents/TodoForm';
-import { TodoList } from './TodoComponents/TodoList';
+import { TodoForm } from './TodoComponents/TodoForm/TodoForm';
+import { TodoList } from './TodoComponents/TodoList/TodoList';
 import "./App.css";
 
 // you will need a place to store your state in this component.
