@@ -27,7 +27,16 @@ class App extends React.Component {
   }
 
   completedTodo = id => {
-    // const todos = this.state.todos.slice();
+    const todos = [].concat(this.state.todos);
+    todos.map(todo => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed;
+        return todo;
+      } else {
+        return todo;
+      }
+    })
+    this.setState({ todos })
   }
 
   render() {
@@ -35,7 +44,7 @@ class App extends React.Component {
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm todo={ this.state.todo } inputHandler={ this.inputHandler } addTodo = { this.addTodo }/>
-        <TodoList todos={ this.state.todos } />
+        <TodoList todos={ this.state.todos } completeTodo={ this.completedTodo } />
       </div>
     );
   }

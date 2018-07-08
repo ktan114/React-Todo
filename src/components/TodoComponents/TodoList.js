@@ -5,7 +5,7 @@ export const TodoList = props => {
     return (
         <div>
             { props.todos.map((element, index) => {
-                return <div key={ index }> <Todo todo = { element } /> </div>
+                return <div key={ index }> <Todo todo = { element } completeTodo = { props.completeTodo } /> </div>
             })}
         </div>
     )
