@@ -10,7 +10,7 @@ export const TodoForm = (props) => {
                 value={props.todo}
                 onChange={props.inputHandler}
             />
-            <button>Add Todo</button>
+            <button onClick = {props.addTodo}>Add Todo</button>
             <button>Clear Completed</button>
         </div>
     )

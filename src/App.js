@@ -10,13 +10,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: [ 
-      {
-        task: "Clean the dishes",
-        id: Date.now(),
-        completed: false,
-      }
-    ],
+      todos: [],
       todo: ""
     }
   }
@@ -25,11 +19,18 @@ class App extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+  addTodo = event => {
+    event.preventDefault();
+    const todos = this.state.todos.slice();
+    todos.push({ task: this.state.todo, id: Date.now(), completed: false });
+    this.setState({ todos, todo: "" })
+  }
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm todo={ this.state.todo } inputHandler={ this.inputHandler } />
+        <TodoForm todo={ this.state.todo } inputHandler={ this.inputHandler } addTodo = { this.addTodo }/>
         <TodoList todos={ this.state.todos } />
       </div>
     );
