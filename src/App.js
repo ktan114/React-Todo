@@ -39,11 +39,20 @@ class App extends React.Component {
     this.setState({ todos })
   }
 
+  completeHandler = event => {
+    event.preventDefault();
+    let todos = [].concat(this.state.todos);
+    todos = todos.filter(item => {
+      return !item.completed;
+    })
+    this.setState({ todos })
+  }
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm todo={ this.state.todo } inputHandler={ this.inputHandler } addTodo = { this.addTodo }/>
+        <TodoForm todo={ this.state.todo } inputHandler={ this.inputHandler } addTodo = { this.addTodo } clearTodo = { this.completeHandler } />
         <TodoList todos={ this.state.todos } completeTodo={ this.completedTodo } />
       </div>
     );
