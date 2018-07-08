@@ -6,8 +6,8 @@ export const TodoForm = (props) => {
             <input 
                 type="text"
                 placeholder="What Is Your Task?"
-                name="task"
-                value={props.task}
+                name="todo"
+                value={props.todo}
                 onChange={props.inputHandler}
             />
             <button>Add Todo</button>
