@@ -1,0 +1,28 @@
+html {
+    background: url("https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&h=350");
+    background-size: cover;
+}
+
+.App {
+    background: black;
+    opacity: .8;
+    border: 2px dotted black;
+    max-width: 600px;
+    width: 100%;
+    margin: 100px 0 0 400px;
+    border-radius: 25px;
+}
+
+.App__h2 {
+    text-align: center;
+    color: white;
+}
+
+.App__List {
+    background: lightgrey;
+    min-height: 400px;
+    max-height: 400px;
+    border-radius: 50px;
+    margin: 20px;
+    padding-top: 10px;
+}

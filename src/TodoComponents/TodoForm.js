@@ -1,8 +1,9 @@
 import React from 'react';
+import './TodoForm.css'
 
 export const TodoForm = (props) => {
     return (
-        <div>
+        <div className="TodoForm">
             <input 
                 type="text"
                 placeholder="What Is Your Task?"

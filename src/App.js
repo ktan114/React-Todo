@@ -1,6 +1,8 @@
 import React from 'react';
-import { TodoForm } from './components/TodoComponents/TodoForm';
-import { TodoList } from './components/TodoComponents/TodoList';
+
+import { TodoForm } from './TodoComponents/TodoForm';
+import { TodoList } from './TodoComponents/TodoList';
+import "./App.css";
 
 // you will need a place to store your state in this component.
 // design `App` to be the parent component of your application.
@@ -50,10 +52,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoForm todo={ this.state.todo } inputHandler={ this.inputHandler } addTodo = { this.addTodo } clearTodo = { this.completeHandler } />
-        <TodoList todos={ this.state.todos } completeTodo={ this.completedTodo } />
+      <div className="App">
+        <h2 className="App__h2">Todo List</h2>
+        <TodoForm 
+          todo={ this.state.todo } 
+          inputHandler={ this.inputHandler } 
+          addTodo = { this.addTodo } 
+          clearTodo = { this.completeHandler } 
+        />
+        <div className="App__List">
+          <TodoList 
+            todos={ this.state.todos } 
+            completeTodo={ this.completedTodo } 
+          />
+        </div>
       </div>
     );
   }
